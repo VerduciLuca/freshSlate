@@ -13,9 +13,9 @@ function showSlateAndBtn() {
 
 }
 
-setTimeout(showSlateAndBtn, 3200)
+setTimeout(showSlateAndBtn, 2700)
 
-setTimeout(hideTitle, 3000); 
+setTimeout(hideTitle, 2500); 
 
 function saveContent() {
     const editableDiv = document.querySelector('.slate');
