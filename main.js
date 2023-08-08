@@ -53,14 +53,17 @@ let isLight = false;
 
 function toggleStyles() {
     const siteTheme = document.querySelector('body');
+    const buttons = document.querySelector('button')
     
     if (!isLight) {
         siteTheme.style.backgroundColor = 'white';
         siteTheme.style.color = 'black';
+        buttons.style.color = 'black'
     } else {
         
         siteTheme.style.backgroundColor = '#18181a'; 
         siteTheme.style.color = 'rgb(231, 231, 231)'; 
+        buttons.style.color = 'white'
     }
 
     isLight = !isLight;
@@ -77,12 +80,12 @@ let isMarkdown = true;
 let markdownContent = '';
 
 function toggleMarkdownHtml() {
-    const content = slateElement.innerText; // Utilizza innerText invece di innerHTML
+    const content = slateElement.innerText; 
 
     if (isMarkdown) {
         markdownContent = content;
         const htmlContent = converter.makeHtml(content);
-        slateElement.innerHTML = ''; // Rimuovi tutto il contenuto
+        slateElement.innerHTML = '';
         slateElement.insertAdjacentHTML('beforeend', htmlContent);
     } else {
         const markdownText = markdownContent.replace(/\n/g, '<br>');
