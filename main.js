@@ -56,8 +56,25 @@ function toggleStyles() {
 const btn1 = document.getElementById('btn1');
 btn1.addEventListener('click', toggleStyles);
 
+const converter = new showdown.Converter();
+const slateElement = document.querySelector('.slate');
+const btn2 = document.getElementById('btn2');
 
+let isMarkdown = true;
+let markdownContent = '';
 
+function toggleMarkdownHtml() {
+    const content = slateElement.innerHTML;
 
+    if (isMarkdown) {
+        markdownContent = content;
+        const htmlContent = converter.makeHtml(content);
+        slateElement.innerHTML = DOMPurify.sanitize(htmlContent);
+    } else {
+        slateElement.innerHTML = markdownContent;
+    }
 
+    isMarkdown = !isMarkdown;
+}
 
+btn2.addEventListener('click', toggleMarkdownHtml);

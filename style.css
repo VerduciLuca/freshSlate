@@ -6,7 +6,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #18181a;
     color: rgb(231, 231, 231);
-    width: 100%;
+    max-width: 100%;
     min-height: 100%;
     margin: 0;  
     position: relative;
@@ -23,6 +23,7 @@ body {
     font-weight: lighter;
     opacity: 0%;
     transition: all 1s ease;
+    flex-wrap: wrap;
 }
 
 [contenteditable="true"]:focus {
