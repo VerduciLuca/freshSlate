@@ -1,12 +1,19 @@
 const titleElement = document.getElementById('title');
+const slate = document.querySelector('.slate')
 
 
 function hideTitle() {
             titleElement.style.opacity = '0%';
         }
 
+function showSlate() {
+            slate.style.opacity = '100%'
 
-setTimeout(hideTitle, 4000); 
+}
+
+setTimeout(showSlate, 3200)
+
+setTimeout(hideTitle, 3000); 
 
 function saveContent() {
     const editableDiv = document.querySelector('.slate');
@@ -27,6 +34,25 @@ document.addEventListener('DOMContentLoaded', loadContent);
 
 setInterval(saveContent, 3000);
 
+let isLight = false;
+
+function toggleStyles() {
+    const siteTheme = document.querySelector('body');
+    
+    if (!isLight) {
+        siteTheme.style.backgroundColor = 'white';
+        siteTheme.style.color = 'black';
+    } else {
+        
+        siteTheme.style.backgroundColor = '#18181a'; 
+        siteTheme.style.color = 'rgb(231, 231, 231)'; 
+    }
+
+    isLight = !isLight;
+}
+
+const btn1 = document.getElementById('btn1');
+btn1.addEventListener('click', toggleStyles);
 
 
 

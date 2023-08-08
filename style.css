@@ -4,21 +4,25 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #313131;
-    color: white;
+    background-color: #18181a;
+    color: rgb(231, 231, 231);
     width: 100%;
+    min-height: 100%;
     margin: 0;  
     position: relative;
+    transition: all 0.5s ease;
 }
 
 .slate {
     max-width: 100%; 
-    min-height: 100vh;
+    margin: 0;
     height: fit-content;
     padding: 1em;
     font-size: 1.5em;
     letter-spacing: 0.18em;
     font-weight: lighter;
+    opacity: 0%;
+    transition: all 1s ease;
 }
 
 [contenteditable="true"]:focus {
@@ -35,10 +39,26 @@ body {
     transition: opacity 0.8s ease-in-out;
     text-align: center; 
     line-height: 1em;
-
+    pointer-events: none;
 }
 
 #title h1{
     font-size: 5em;
     font-weight: 400;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-right: 1em;
+    height: 3em;
+}
+
+.btn-div button{
+    background: none;
+    color: rgb(231, 231, 231) ;
+    border: none;
+    justify-content: center;
+    align-items: center;
 }
