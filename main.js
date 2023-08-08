@@ -1,6 +1,7 @@
 const titleElement = document.getElementById('title');
 const slate = document.querySelector('.slate')
 const btns = document.querySelector('.btn-div')
+const count = document.querySelector('#wordCount')
 
 
 function hideTitle() {
@@ -10,6 +11,7 @@ function hideTitle() {
 function showSlateAndBtn() {
             slate.style.opacity = '100%'
             btns.style.opacity = '100%'
+            count.style.opacity = '100%'
 
 }
 
