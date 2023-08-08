@@ -134,3 +134,18 @@ function updateWordCount() {
 
 slateElement.addEventListener('input', updateWordCount);
 
+const fullscreenBtn = document.getElementById('fullscreenBtn');
+const appElement = document.querySelector('body'); 
+
+fullscreenBtn.addEventListener('click', () => {
+    if (appElement.requestFullscreen) {
+        appElement.requestFullscreen();
+    } else if (appElement.mozRequestFullScreen) { 
+        appElement.mozRequestFullScreen();
+    } else if (appElement.webkitRequestFullscreen) { 
+        appElement.webkitRequestFullscreen();
+    } else if (appElement.msRequestFullscreen) { 
+        appElement.msRequestFullscreen();
+    }
+});
+
