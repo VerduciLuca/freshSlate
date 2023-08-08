@@ -33,18 +33,24 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%; 
-    transform: translateY(-50%); 
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     opacity: 100%;
     transition: opacity 0.8s ease-in-out;
-    text-align: center; 
-    line-height: 1em;
     pointer-events: none;
+    line-height: 1em;
+
 }
 
 #title h1{
     font-size: 5em;
     font-weight: 400;
+    margin: 0;
+    padding: 0.4em;
 }
 
 .btn-div{
