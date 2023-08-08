@@ -32,13 +32,7 @@ function loadContent() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const titleElement = document.getElementById('title');
-    const slate = document.querySelector('.slate');
-    const btns = document.querySelector('.btn-div');
-    const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
-    const slateElement = document.querySelector('.slate');
-    
+    loadContent()
 
 
     btn1.addEventListener('click', toggleStyles);
