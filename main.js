@@ -56,17 +56,21 @@ let isLight = false;
 
 function toggleStyles() {
     const siteTheme = document.querySelector('body');
-    const buttons = document.querySelector('button')
+    const buttons = document.querySelectorAll('button')
     
     if (!isLight) {
         siteTheme.style.backgroundColor = 'white';
         siteTheme.style.color = 'black';
-        buttons.style.color = 'black'
+        buttons.forEach(button => {
+            button.style.color = 'black'; 
+        });
     } else {
         
         siteTheme.style.backgroundColor = '#18181a'; 
         siteTheme.style.color = 'rgb(231, 231, 231)'; 
-        buttons.style.color = 'white'
+        buttons.forEach(button => {
+            button.style.color = 'white'; 
+        });
     }
 
     isLight = !isLight;
