@@ -54,6 +54,10 @@ body {
     padding: 0.4em;
 }
 
+#title h4{
+    font-weight: 300;
+}
+
 .btn-div{
     display: flex;
     justify-content: flex-end;
@@ -70,6 +74,15 @@ body {
     border: none;
     justify-content: center;
     align-items: center;
+}
+
+#wordCount{
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    color: #37373a;
 }
 
 /* --------------------------------------------------QUERIES PER PC------------------------------------------------------ */

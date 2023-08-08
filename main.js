@@ -21,6 +21,7 @@ function saveContent() {
     const editableDiv = document.querySelector('.slate');
     const content = editableDiv.innerHTML;
     localStorage.setItem('editableContent', content);
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
 }
 
 function loadContent() {
@@ -29,10 +30,15 @@ function loadContent() {
     if (savedContent) {
         editableDiv.innerHTML = savedContent;
     }
+    if (localStorage.getItem('theme') === 'light') {
+        toggleStyles();
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadContent()
+    updateWordCount();
 
 
     btn1.addEventListener('click', toggleStyles);
@@ -44,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 setInterval(saveContent, 3000);
 
 let isLight = false;
+
 
 function toggleStyles() {
     const siteTheme = document.querySelector('body');
@@ -61,6 +68,7 @@ function toggleStyles() {
     }
 
     isLight = !isLight;
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
 }
 
 const btn1 = document.getElementById('btn1');
@@ -114,4 +122,13 @@ function downloadContent() {
 
     URL.revokeObjectURL(url);
 }
+
+function updateWordCount() {
+    const content = slateElement.innerText;
+    const words = content.trim().split(/\s+/).filter(Boolean).length;
+    const wordCountElement = document.getElementById('wordCount');
+    wordCountElement.textContent = `Words: ${words}`;
+}
+
+slateElement.addEventListener('input', updateWordCount);
 
