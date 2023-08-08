@@ -94,3 +94,24 @@ function toggleMarkdownHtml() {
 
 
 btn2.addEventListener('click', toggleMarkdownHtml);
+
+
+const btn3 = document.getElementById('btn3');
+
+btn3.addEventListener('click', downloadContent);
+
+function downloadContent() {
+    const content = slateElement.innerText;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'your slate.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+}
+
