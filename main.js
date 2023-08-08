@@ -85,7 +85,9 @@ function toggleMarkdownHtml() {
         slateElement.innerHTML = ''; // Rimuovi tutto il contenuto
         slateElement.insertAdjacentHTML('beforeend', htmlContent);
     } else {
-        slateElement.innerHTML = markdownContent;
+        const markdownText = markdownContent.replace(/\n/g, '<br>');
+        slateElement.innerHTML = markdownText;
+
     }
 
     isMarkdown = !isMarkdown;
