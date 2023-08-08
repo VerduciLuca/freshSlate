@@ -31,7 +31,20 @@ function loadContent() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadContent);
+document.addEventListener('DOMContentLoaded', () => {
+    const titleElement = document.getElementById('title');
+    const slate = document.querySelector('.slate');
+    const btns = document.querySelector('.btn-div');
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const slateElement = document.querySelector('.slate');
+    
+
+
+    btn1.addEventListener('click', toggleStyles);
+    btn2.addEventListener('click', toggleMarkdownHtml);
+});
+
 
 
 setInterval(saveContent, 3000);
@@ -64,17 +77,21 @@ let isMarkdown = true;
 let markdownContent = '';
 
 function toggleMarkdownHtml() {
-    const content = slateElement.innerHTML;
+    const content = slateElement.innerText; // Utilizza innerText invece di innerHTML
 
     if (isMarkdown) {
         markdownContent = content;
         const htmlContent = converter.makeHtml(content);
-        slateElement.innerHTML = DOMPurify.sanitize(htmlContent);
+        slateElement.innerHTML = ''; // Rimuovi tutto il contenuto
+        slateElement.insertAdjacentHTML('beforeend', htmlContent);
     } else {
         slateElement.innerHTML = markdownContent;
     }
 
     isMarkdown = !isMarkdown;
 }
+
+
+
 
 btn2.addEventListener('click', toggleMarkdownHtml);
