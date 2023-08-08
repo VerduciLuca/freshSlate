@@ -59,6 +59,8 @@ body {
     gap: 1em;
     margin-right: 1em;
     height: 3em;
+    opacity: 0%;
+    transition: all 1s ease;
 }
 
 .btn-div button{

@@ -1,17 +1,19 @@
 const titleElement = document.getElementById('title');
 const slate = document.querySelector('.slate')
+const btns = document.querySelector('.btn-div')
 
 
 function hideTitle() {
             titleElement.style.opacity = '0%';
         }
 
-function showSlate() {
+function showSlateAndBtn() {
             slate.style.opacity = '100%'
+            btns.style.opacity = '100%'
 
 }
 
-setTimeout(showSlate, 3200)
+setTimeout(showSlateAndBtn, 3200)
 
 setTimeout(hideTitle, 3000); 
 
